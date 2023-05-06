@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/HomeFragment">
+
+    <fragment
+
+        android:id="@+id/HomeFragment"
+        android:name="com.nailmehdiyev.mymysqlinstagram.ui.view.fragment.HomeFragment"
+        android:label="HomeFragment">
+
+
+        <action
+            android:id="@+id/hometoprofile"
+            app:destination="@id/profileFragment" />
+
+
+        <action
+            android:id="@+id/homeToPostDetails"
+            app:destination="@id/postDetailsFragment" />
+
+    </fragment>
+
+
+    <fragment
+
+        android:id="@+id/searchFragment"
+        android:name="com.nailmehdiyev.mymysqlinstagram.ui.view.fragment.SearchFragment"
+        android:label="SearchFragment">
+
+
+        <action
+            android:id="@+id/searchToProfile"
+            app:destination="@id/profileFragment" />
+
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/PostFragment"
+        android:name="com.nailmehdiyev.mymysqlinstagram.ui.view.fragment.PostFragment"
+        android:label="PostFragment">
+        <action
+            android:id="@+id/PostToHome"
+            app:destination="@id/HomeFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/notificationsFragment"
+        android:name="com.nailmehdiyev.mymysqlinstagram.ui.view.fragment.NotificationFragment"
+        android:label="NotificationFragment">
+        <action
+            android:id="@+id/notificationsToProfile"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/notificationsToPostDetails"
+            app:destination="@id/postDetailsFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.nailmehdiyev.mymysqlinstagram.ui.view.fragment.SettingsFragment"
+        android:label="SettingsFragment">
+        <action
+            android:id="@+id/settingsToProfile"
+            app:destination="@id/profileFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/savedPostsFragment"
+        android:name="com.nailmehdiyev.mymysqlinstagram.ui.view.fragment.SavedPostFragment"
+        android:label="SavedPostsFragment">
+        <action
+            android:id="@+id/savedPostsToProfile"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/savedPostsToPostDetails"
+            app:destination="@id/postDetailsFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.nailmehdiyev.mymysqlinstagram.ui.view.fragment.ProfilFragment"
+        android:label="ProfileFragment">
+
+        <action
+            android:id="@+id/profileToFollow"
+            app:destination="@id/followFragment" />
+        <action
+            android:id="@+id/profileToPostDetails"
+            app:destination="@id/postDetailsFragment" />
+
+
+        <argument
+            android:name="userid"
+            app:argType="integer"
+            android:defaultValue="0"/>
+
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/followFragment"
+        android:name="com.nailmehdiyev.mymysqlinstagram.ui.view.fragment.FollowFragment"
+        android:label="FollowFragment">
+
+        <argument
+            android:name="users"
+            app:argType="com.nailmehdiyev.mymysqlinstagram.data.model.User[]" />
+
+        <action
+            android:id="@+id/followToProfile"
+            app:destination="@id/profileFragment" />
+
+
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/postDetailsFragment"
+        android:name="com.nailmehdiyev.mymysqlinstagram.ui.view.fragment.PostDetailsFragment"
+        android:label="PostDetailsFragment">
+
+        <action
+            android:id="@+id/postDetailsToProfile"
+            app:destination="@id/profileFragment" />
+
+
+        <argument
+            android:name="postid"
+            android:defaultValue="0"
+            app:argType="integer" />
+    </fragment>
+
+
+</navigation>
